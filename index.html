@@ -1,174 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heart Animation</title>
+  <title>𝑁𝑂𝑃𝐴𝐿𝐴 𝐵𝐴𝑁𝐾</title> 
+  <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="𝑁𝑂𝑃𝐴𝐿𝐴 𝐵𝐴𝑁𝐾">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: black;
-      color: #fff;
-      font-family: "Archivo Black", sans-serif;
-      font-size: 3em;
+      background-image: url('https://qu.ax/LgCWS.jpg'); /* تغيير رابط الصورة في الخلفية */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+    }
+
+    h1 {
       text-align: center;
-      scrollbar-width: none;
+      font-size: 50px;
+      background: linear-gradient(to right, red, yellow, orange, purple, blue);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.8), 0 0 70px rgba(138, 43, 226, 0.8);
+      animation: glow 1.5s ease-in-out infinite alternate; 
+      font-family: 'Cairo', sans-serif;
     }
 
-    .heart {
-      fill: red;
-      position: relative;
-      top: 5px;
-      width: 50px;
-      animation: pulse 1s ease infinite;
-    }
-
-    @keyframes pulse {
+    @keyframes glow {
       0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.3);
+        text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 69, 0, 0.8), 0 0 70px rgba(138, 43, 226, 0.8);
       }
       100% {
-        transform: scale(1);
+        text-shadow: 0 0 60px rgba(255, 0, 0, 1), 0 0 100px rgba(255, 69, 0, 1), 0 0 120px rgba(138, 43, 226, 1);
       }
     }
 
-    #heart {
-      position: relative;
-      width: 100px;
-      height: 90px;
+    .sub-title {
       text-align: center;
-      font-size: 16px;
+      font-size: 25px; 
+      color: #ffffff;
+      font-family: 'Cairo', sans-serif;
+      text-shadow: 0 0 10px #ff69b4;
     }
 
-    #heart span {
+    .table-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      margin-top: 50px;
+    }
+
+    table {
       width: 100%;
-      display: block;
-      left: 0;
-      right: 0;
-      z-index: 1;
+      border-collapse: collapse;
+      text-align: center;
     }
 
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
+    th, td {
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
+    th {
+      background-color: #ff00ff;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    tr:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .rank-high {
+      background-color: #000 !important;
+    }
+
+    .rank-mid {
+      background-color: #000 !important;
+    }
+
+    .rank-low {
+      background-color: #000 !important;
+    }
+
   </style>
 </head>
 <body>
-  <div id="obal">
-    <canvas id="c"></canvas>
+  <h1>𝑁𝑂𝑃𝐴𝐿𝐴 𝐵𝐴𝑁𝐾</h1> 
+  <div class="sub-title">تـامـايـو عمـتـك</div> 
+
+  <div style="text-align: center; margin-top: 20px;">
+  <input type="text" id="searchInput" placeholder="ابحث عن لقب..." style="padding: 10px; width: 300px; font-size: 16px; border-radius: 10px; border: none; text-align: center;">
+</div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>اللقب</th>
+          <th>الرتبة</th> 
+          <th>العملة</th>
+          <th>الرونز</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rank-high"><td>شادو</td><td>الامبراطور</td><td></td><td></td></tr>
+        <tr class="rank-high"><td>يامي</td><td>نائب الامبراطور</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td></td><td>اللورد</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td></td><td>نائب اللورد</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>كيوكي</td><td>الملكه</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>تامايو</td><td>الاميره</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>آنيا</td><td>الاميره</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>كارين</td><td>الوزيره</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>يونا</td><td>الدوقه</td><td></td><td></td></tr>
+        <tr class="rank-high"><td>هينا</td><td>رئيسه الفرسان</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>اكاني</td><td>الفرسان</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>كوزيت</td><td>القائده</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td></td><td>نائبه القائده</td><td></td><td></td></tr>
+        <tr class="rank-low"><td>ايميلي</td><td>لواء</td><td></td><td></td></tr>
+        <tr class="rank-low"><td></td><td>عميده</td><td></td><td></td></tr>
+        <tr class="rank-low"><td></td><td>عقيده</td><td></td><td></td></tr>
+        <tr class="rank-low"><td></td><td>مقدمه</td><td></td><td></td></tr>
+        <tr class="rank-low"><td></td><td>رائده</td><td></td><td></td></tr>
+        <tr class="rank-low"><td>هینا تسورو</td><td>عريفه</td><td></td><td></td></tr>
+<tr class="rank-low"><td>ميارا</td><td>عريفه</td><td></td><td></td></tr>
+        <tr class="rank-mid"><td>هانجي</td><td>جنديه تدريبيه</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاغويا</td><td>جنديه تدريبيه</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاميليا</td><td>جنديه تدريبيه</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ايكوا</td><td>جنديه تدريبيه</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هيمينو</td><td>جنديه تدريبيه</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>الوكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>إيميلكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اكيرا ياما</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اوتا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اکانی</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>امو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>البكسبا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ایزومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ایکو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اليانا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ايومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اليز</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اور اراکا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>انيا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>انجي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ایتسوكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ايميلي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اینو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>انوي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اوتا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ادلر</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>إيلين</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اوکو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اسونا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ايما</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ايوم</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اڤي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>آريا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>أليس</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اماني</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اليا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>اوتشاكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>بيبي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>بيسكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>بينيلوب</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>بيك</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تشان هاي ان</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>توساکا رن</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>توغا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>توموكو كيروكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تیا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تاماكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تاكينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تاتسوكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تسوتاكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>تسونادی</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>جينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>دو شاو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>دومی</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ريم</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روكسانا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ريشي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>داكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>رينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ريلينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ران</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روکیا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روبين</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>رافتاليا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روبیکا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ريكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روبي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ريكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>رونا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ربكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>روكسي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>زيروتو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساغيري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساوري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سافين</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سيكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساشا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سونوكو سوزوكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سينكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساواکو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساني</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سارادا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سايفت</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سايا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سيرا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساكروا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سوكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ساتومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سيشي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سالي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سينجيمارو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>سانجو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شينوبو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيرايكوشي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيليا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيزو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شما</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيمومو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيكيموري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شولينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شينوزوكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شوكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>شيغري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فايوليت</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فيرموث</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فوتابا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فيونا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فريرن</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فيتينيا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>فيتان</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاسومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>کازوها</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيوكاي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كوتوها</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيساكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>کومی</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاتوها</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاناي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيريا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كانا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاجومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كاي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كايكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيوكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كيوموتو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كلوي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كورومي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كايينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>کورومو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>كوشينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>لوسي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>لارت</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ليونا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ليتشيا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ليمون</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ماماو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميتسوري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ماي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ماكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميتو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>مايورا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميارا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميكاسا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>مارينات</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>مومو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميمي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ميسا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ماتشي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نانا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نينا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نيل</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نسمه</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نيزوكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ناتسو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نامي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نوسيكا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نوبارا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ناتسو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>نوريكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هیما واری</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هیوری</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هانجي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هيستوريا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هيبارا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هوري</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هايسو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هيناتا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هانكوك</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هيروكتا</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>هان تشان</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يوميكو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>ياشيرو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يوي هيراساو</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يومير</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يور</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يوكي</td><td>عضو</td><td></td><td></td></tr>
+<tr class="rank-mid"><td>يا وارا سينومي</td><td>عضو</td><td></td><td></td></tr>
+      </tbody>
+    </table>
   </div>
-  <script>
-    var c = document.getElementById('c');
-    var a = c.getContext('2d');
-    var O = c.width = innerWidth;
-    var Q = c.height = innerHeight;
-    var v = 32; // num trails, num particles per trail & num nodes in heart path
-    var M = Math;
-    var R = M.random;
-    var C = M.cos;
-    var Y = 6.3; // close to 44/7 or Math.PI * 2 - 6.3 seems is close enough.
-    var h = [];
-    var e = []; // trails
-
-    // Calculate heart path nodes
-    for (var i = 0; i < Y; i += .2) {
-      h.push([
-        O / 2 + 180 * M.pow(M.sin(i), 3),
-        Q / 2 + 10 * (-(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i)))
-      ]);
-    }
-
-    var i = 0;
-    while (i < v) {
-      var x = R() * O;
-      var y = R() * Q;
-      var H = i / v * 80 + 280;
-      var S = R() * 40 + 60;
-      var B = R() * 60 + 20;
-      var f = []; // create new trail
-
-      var k = 0;
-      while (k < v) {
-        f[k++] = {
-          x: x,
-          y: y,
-          X: 0, // velocity
-          Y: 0,
-          R: (1 - k / v) + 1, // radius
-          S: R() + 1, // acceleration
-          q: ~~(R() * v), // target node on heart path
-          D: i % 2 * 2 - 1, // direction around heart path
-          F: R() * .2 + .7, // friction
-          f: "hsla(" + ~~H + "," + ~~S + "%," + ~~B + "%,.1)" // colour
-        };
+<script>
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", function () {
+    const filter = this.value.toLowerCase();
+    const rows = document.querySelectorAll("table tbody tr");
+    
+    rows.forEach(row => {
+      const titleCell = row.cells[0]; // العمود الأول
+      if (titleCell) {
+        const text = titleCell.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
       }
-      e[i++] = f; // dots are a 2d array of trails x particles
-    }
-
-    function render(_) { // draw particle
-      a.fillStyle = _.f;
-      a.beginPath();
-      a.arc(_.x, _.y, _.R, 0, Y, 1);
-      a.closePath();
-      a.fill();
-    }
-
-    function loop() {
-      a.fillStyle = "rgba(0,0,0,.2)"; // clear screen
-      a.fillRect(0, 0, O, Q);
-
-      for (var i = v - 1; i >= 0; i--) {
-        var f = e[i]; // get worm
-        var u = f[0]; // get 1st particle of worm
-        var q = h[u.q]; // get current node on heart path
-        var D = u.x - q[0]; // calc distance
-        var E = u.y - q[1];
-        var G = M.sqrt((D * D) + (E * E));
-
-        if (G < 10) { // has trail reached target node?
-          if (R() > .95) { // randomly send a trail elsewhere
-            u.q = ~~(R() * v);
-          } else {
-            if (R() > .99) u.D *= -1; // randomly change direction
-            u.q += u.D;
-            u.q %= v;
-            if (u.q < 0) u.q += v;
-          }
-        }
-
-        u.X += -D / G * u.S; // calculate velocity
-        u.Y += -E / G * u.S;
-
-        u.x += u.X; // apply velocity
-        u.y += u.Y;
-
-        render(u); // draw the first particle
-
-        u.X *= u.F; // apply friction
-        u.Y *= u.F;
-
-        var k = 0;
-        while (k < v - 1) { // loop through remaining dots
-          var T = f[k]; // this particle
-          var N = f[++k]; // next particle
-
-          N.x -= (N.x - T.x) * .7; // use Zeno's paradox to create trail
-          N.y -= (N.y - T.y) * .7;
-
-          render(N);
-        }
-      }
-    }
-
-    // Animate the loop
-    (function doit() {
-      requestAnimationFrame(doit);
-      loop();
-    })();
-  </script>
+    });
+  });
+</script>
 </body>
 </html>
