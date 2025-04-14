@@ -105,10 +105,25 @@
 <body>
   <h1>𝑁𝑂𝑃𝐴𝐿𝐴 𝐵𝐴𝑁𝐾</h1> 
   <div class="sub-title">تـامـايـو عمـتـك</div> 
-
-  <div style="text-align: center; margin-top: 20px;">
-  <input type="text" id="searchInput" placeholder="ابحث عن لقبك ..." style="padding: 10px; width: 300px; font-size: 16px; border-radius: 10px; border: none; text-align: center;">
-</div>
+<input
+    type="text"
+    id="searchInput"
+    placeholder="ابحث عن لقبك ..."
+    style="
+      padding: 12px 20px;
+      width: 320px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      outline: none;
+    "
+    onfocus="document.getElementById('searchContainer').style.transform = 'scale(1.1)'"
+    onblur="document.getElementById('searchContainer').style.transform = 'scale(1)'"
+  />
+  </div>
   <div class="table-container">
     <table>
       <thead>
