@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; 
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0d253f 0%, #050a14 100%);
+  color: #eef8ff;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 15px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px 20px;
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(130, 200, 255, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.8);
+  line-height: 1.6;
+}
+
+.rules {
+  list-style: none;
+  width: 100%;
+}
+
+.rules li {
+  padding: 15px 15px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: right center;
+}
+
+.rules li.active {
+  background: linear-gradient(90deg, rgba(0, 210, 255, 0.15) 0%, transparent 100%);
+  border-right: 4px solid #00d2ff;
+  padding-right: 30px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+  transform: scale(1.03) translateX(-5px);
+  border-bottom-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.rules li:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  padding-right: 20px;
+  color: #00d2ff;
+}
+
+/* --- صندوق التحذير الاحترافي الجديد --- */
+.warning-box {
+  margin-top: 35px;
+  padding: 20px;
+  position: relative;
+  background: linear-gradient(145deg, rgba(60, 10, 10, 0.8), rgba(30, 0, 0, 0.9));
+  border: 1px solid rgba(255, 50, 50, 0.3);
+  border-right: 4px solid #ff3333; /* خط أحمر عريض يمين الصندوق */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s;
+}
+
+.warning-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.15);
+}
+
+.warning-title {
+  color: #ff4d4d;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.warning-icon {
+  font-size: 22px;
+  animation: pulse-red 2s infinite;
+}
+
+.warning-box p {
+  color: #ffcccc; /* لون وردي فاتح جداً للقراءة المريحة */
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@keyframes pulse-red {
+  0% { text-shadow: 0 0 0 rgba(255, 50, 50, 0); transform: scale(1); }
+  50% { text-shadow: 0 0 15px rgba(255, 50, 50, 0.8); transform: scale(1.1); }
+  100% { text-shadow: 0 0 0 rgba(255, 50, 50, 0); transform: scale(1); }
+}
+
+/* ندفة الثلج */
+.snowflake {
+  position: fixed;
+  top: -20px;
+  color: #e0f7ff;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+@media (max-width: 370px) {
+  .title { font-size: 20px; }
+  .rules li { font-size: 13px; }
+}
