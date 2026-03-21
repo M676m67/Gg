@@ -196,3 +196,11 @@ body {
   .rules li { font-size: 14px; padding: 14px 15px; }
   .rules li::after { left: 15px; top: 16px; }
 }
+*:focus {
+  outline: none !important;
+}
+
+a, button, input, img, div, select, textarea {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent; 
+}
